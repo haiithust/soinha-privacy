@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soi Nhà – Chính sách quyền riêng tư</title>
+<style>
+:root{--bg:#fff;--fg:#1d1d1f;--muted:#5b5b60;--line:#e5e5ea;--accent:#1d4f91}
+@media (prefers-color-scheme:dark){:root{--bg:#121214;--fg:#ececf0;--muted:#a1a1a8;--line:#2c2c30;--accent:#7aaef0}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 16px 64px}
+h1{font-size:28px;line-height:1.25;margin:0 0 4px}
+h2{font-size:19px;margin:32px 0 8px;color:var(--accent)}
+.meta{color:var(--muted);font-size:14px;margin-bottom:24px}
+hr{border:0;border-top:1px solid var(--line);margin:48px 0}
+a{color:var(--accent)}
+li{margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Chính sách quyền riêng tư – Soi Nhà</h1>
+<div class="meta">Cập nhật: 06/11/2026 · <a href="#en">English below</a></div>
+
+<p>Soi Nhà (gói ứng dụng <code>vn.soinha.app</code>) giúp chủ nhà tự kiểm tra công trình theo từng tầng, chụp ảnh bằng chứng và theo dõi lỗi cần sửa. Chính sách này nói rõ ứng dụng thu thập dữ liệu gì, dùng vào việc gì, gửi cho ai và bạn xoá dữ liệu bằng cách nào.</p>
+
+<h2>1. Dùng không cần tài khoản</h2>
+<p>Bạn có thể dùng Soi Nhà mà không đăng nhập. Khi đó công trình, kết quả kiểm tra, ghi chú và ảnh chỉ lưu trên điện thoại của bạn; chúng tôi không nhận được các dữ liệu này.</p>
+
+<h2>2. Khi bạn đăng nhập</h2>
+<p>Đăng nhập bằng tài khoản Google (qua Firebase Authentication của Google) để sao lưu, đồng bộ giữa các máy và chia sẻ công trình. Khi đó chúng tôi xử lý:</p>
+<ul>
+<li><strong>Thông tin tài khoản:</strong> địa chỉ email và mã định danh tài khoản Google, để nhận ra tài khoản của bạn.</li>
+<li><strong>Dữ liệu công trình:</strong> tên công trình, số tầng, giai đoạn, mốc dự kiến, kết quả kiểm tra, mô tả lỗi và ghi chú bạn nhập.</li>
+<li><strong>Ảnh bằng chứng:</strong> ảnh bạn chụp hoặc chọn cho các mục kiểm tra. Ảnh được thu nhỏ và xoá thông tin kèm theo (như vị trí GPS) trước khi tải lên.</li>
+<li><strong>Lời mời:</strong> khi bạn mời người khác vào công trình, chúng tôi lưu email người được mời và gửi cho họ một email mời.</li>
+</ul>
+<p>Dữ liệu này chỉ dùng để cung cấp các tính năng trên. Chúng tôi không bán dữ liệu, không dùng cho quảng cáo và không cho bên khác dùng vào mục đích riêng của họ.</p>
+
+<h2>3. Báo lỗi ứng dụng</h2>
+<p>Bản phát hành gửi báo cáo khi ứng dụng gặp lỗi qua Firebase Crashlytics của Google: loại lỗi, vị trí lỗi trong mã, kiểu máy và phiên bản hệ điều hành. Báo cáo không kèm email, mã tài khoản hay nội dung công trình của bạn.</p>
+
+<h2>4. Bên xử lý dữ liệu</h2>
+<p>Chúng tôi dùng các nhà cung cấp sau để vận hành dịch vụ, chỉ theo chỉ dẫn của chúng tôi:</p>
+<ul>
+<li>Google (Firebase Authentication, Firebase Crashlytics) – đăng nhập và báo lỗi.</li>
+<li>Fly.io – máy chủ ứng dụng (khu vực Singapore).</li>
+<li>Supabase – cơ sở dữ liệu và lưu trữ ảnh.</li>
+<li>Resend – gửi email mời.</li>
+</ul>
+<p>Dữ liệu được truyền qua kết nối mã hoá (HTTPS). Người bạn mời vào công trình sẽ xem và sửa được dữ liệu của công trình đó cho tới khi bạn gỡ họ ra.</p>
+
+<h2>5. Quyền trên điện thoại</h2>
+<ul>
+<li><strong>Máy ảnh / ảnh:</strong> chỉ khi bạn bấm chụp hoặc chọn ảnh bằng chứng.</li>
+<li><strong>Thông báo:</strong> nhắc các mốc kiểm tra bạn đặt.</li>
+<li><strong>Internet, chạy nền khi khởi động lại máy:</strong> đồng bộ dữ liệu và giữ lịch nhắc.</li>
+</ul>
+
+<h2>6. Lưu giữ và xoá dữ liệu</h2>
+<ul>
+<li>Dữ liệu trên máy: xoá khi bạn gỡ ứng dụng, xoá dữ liệu ứng dụng, hoặc chọn xoá dữ liệu trên máy khi đăng xuất.</li>
+<li>Dữ liệu trên máy chủ: được giữ khi tài khoản còn hoạt động. Bạn có thể xoá tài khoản ngay trong ứng dụng (Tài khoản → <em>Xoá tài khoản</em>); tài khoản ngừng hoạt động ngay và toàn bộ dữ liệu, ảnh của tài khoản trên máy chủ bị xoá vĩnh viễn sau đó.</li>
+<li>Nếu không còn cài ứng dụng, bạn có thể gửi yêu cầu xoá tài khoản tới email bên dưới, từ địa chỉ email của tài khoản.</li>
+</ul>
+
+<h2>7. Trẻ em</h2>
+<p>Ứng dụng dành cho người từ 18 tuổi trở lên và không cố ý thu thập dữ liệu của trẻ em.</p>
+
+<h2>8. Thay đổi chính sách</h2>
+<p>Khi chính sách thay đổi, bản mới được đăng tại trang này kèm ngày cập nhật.</p>
+
+<h2>9. Liên hệ</h2>
+<p>Email: <a href="mailto:hai.ithust@gmail.com">hai.ithust@gmail.com</a></p>
+
+<hr>
+
+<h1 id="en">Privacy Policy – Soi Nhà</h1>
+<div class="meta">Last updated: November 6, 2026</div>
+
+<p>Soi Nhà (package <code>vn.soinha.app</code>) helps homeowners inspect their construction work floor by floor, take evidence photos and track defects. This policy explains what data the app collects, why, who receives it and how to delete it.</p>
+
+<h2>1. Using the app without an account</h2>
+<p>You can use Soi Nhà without signing in. Your projects, inspection results, notes and photos then stay on your phone only; we do not receive them.</p>
+
+<h2>2. When you sign in</h2>
+<p>Signing in with a Google account (through Google's Firebase Authentication) enables backup, sync across devices and project sharing. We then process:</p>
+<ul>
+<li><strong>Account information:</strong> your email address and Google account identifier, to recognise your account.</li>
+<li><strong>Project data:</strong> project names, floors, stages, planned milestones, inspection results, defect descriptions and notes you enter.</li>
+<li><strong>Evidence photos:</strong> photos you take or pick for checklist items. They are resized and stripped of metadata (such as GPS location) before upload.</li>
+<li><strong>Invitations:</strong> when you invite someone to a project, we store their email address and send them an invitation email.</li>
+</ul>
+<p>This data is used only to provide these features. We do not sell it, use it for advertising, or let others use it for their own purposes.</p>
+
+<h2>3. Crash reports</h2>
+<p>Release builds send crash reports through Google's Firebase Crashlytics: the error type, where in the code it happened, device model and OS version. Reports do not include your email, account identifier or project content.</p>
+
+<h2>4. Service providers</h2>
+<p>We use these providers to run the service, acting only on our instructions:</p>
+<ul>
+<li>Google (Firebase Authentication, Firebase Crashlytics) – sign-in and crash reports.</li>
+<li>Fly.io – application servers (Singapore region).</li>
+<li>Supabase – database and photo storage.</li>
+<li>Resend – invitation emails.</li>
+</ul>
+<p>Data is sent over encrypted connections (HTTPS). People you invite to a project can view and edit that project's data until you remove them.</p>
+
+<h2>5. Device permissions</h2>
+<ul>
+<li><strong>Camera / photos:</strong> only when you take or pick an evidence photo.</li>
+<li><strong>Notifications:</strong> reminders for the milestones you set.</li>
+<li><strong>Internet, run after reboot:</strong> syncing data and keeping reminders scheduled.</li>
+</ul>
+
+<h2>6. Retention and deletion</h2>
+<ul>
+<li>On your device: deleted when you uninstall the app, clear its data, or choose to delete local data when signing out.</li>
+<li>On our servers: kept while your account is active. You can delete your account in the app (Account → <em>Xoá tài khoản</em> / Delete account); the account stops working immediately and all of its server data and photos are then permanently deleted.</li>
+<li>If the app is no longer installed, email a deletion request to the address below from your account's email address.</li>
+</ul>
+
+<h2>7. Children</h2>
+<p>The app is intended for users aged 18 and over and does not knowingly collect data from children.</p>
+
+<h2>8. Changes</h2>
+<p>Updates to this policy are posted on this page with a new "last updated" date.</p>
+
+<h2>9. Contact</h2>
+<p>Email: <a href="mailto:hai.ithust@gmail.com">hai.ithust@gmail.com</a></p>
+</main>
+</body>
+</html>
