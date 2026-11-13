@@ -20,7 +20,7 @@ li{margin:4px 0}
 <body>
 <main>
 <h1>Chính sách quyền riêng tư – Soi Nhà</h1>
-<div class="meta">Cập nhật: 06/11/2026 · <a href="#en">English below</a></div>
+<div class="meta">Cập nhật: 13/11/2026 · <a href="#en">English below</a></div>
 
 <p>Soi Nhà (gói ứng dụng <code>vn.soinha.app</code>) giúp chủ nhà tự kiểm tra công trình theo từng tầng, chụp ảnh bằng chứng và theo dõi lỗi cần sửa. Chính sách này nói rõ ứng dụng thu thập dữ liệu gì, dùng vào việc gì, gửi cho ai và bạn xoá dữ liệu bằng cách nào.</p>
 
@@ -28,13 +28,19 @@ li{margin:4px 0}
 <p>Bạn có thể dùng Soi Nhà mà không đăng nhập. Khi đó công trình, kết quả kiểm tra, ghi chú và ảnh chỉ lưu trên điện thoại của bạn; chúng tôi không nhận được các dữ liệu này.</p>
 
 <h2>2. Khi bạn đăng nhập</h2>
-<p>Đăng nhập bằng tài khoản Google (qua Firebase Authentication của Google) để sao lưu, đồng bộ giữa các máy và chia sẻ công trình. Khi đó chúng tôi xử lý:</p>
+<p>Đăng nhập bằng tài khoản Google, hoặc bằng Apple trên iPhone và iPad (qua Firebase Authentication của Google), để sao lưu, đồng bộ giữa các máy và chia sẻ công trình. Khi đó chúng tôi xử lý:</p>
 <ul>
-<li><strong>Thông tin tài khoản:</strong> địa chỉ email và mã định danh tài khoản Google, để nhận ra tài khoản của bạn.</li>
+<li><strong>Thông tin tài khoản:</strong> địa chỉ email và mã định danh tài khoản Google hoặc Apple, để nhận ra tài khoản của bạn. Khi đăng nhập bằng Apple, bạn có thể chọn ẩn email: khi đó chúng tôi chỉ nhận một địa chỉ chuyển tiếp do Apple tạo. Một email đã dùng với Google và Apple được coi là cùng một tài khoản.</li>
 <li><strong>Dữ liệu công trình:</strong> tên công trình, số tầng, giai đoạn, mốc dự kiến, kết quả kiểm tra, mô tả lỗi và ghi chú bạn nhập.</li>
 <li><strong>Ảnh bằng chứng:</strong> ảnh bạn chụp hoặc chọn cho các mục kiểm tra. Ảnh được thu nhỏ và xoá thông tin kèm theo (như vị trí GPS) trước khi tải lên.</li>
 <li><strong>Lời mời:</strong> khi bạn mời người khác vào công trình, chúng tôi lưu email người được mời và gửi cho họ một email mời.</li>
+<li><strong>Gói đồng bộ:</strong> khi bạn mua gói đồng bộ qua Google Play, Google xử lý thanh toán; chúng tôi không nhận thông tin thẻ hay tài khoản ngân hàng. Chúng tôi nhận và lưu mã giao dịch (purchase token), gói, ngày bắt đầu và ngày hết hạn, và kiểm tra lại với Google Play để biết gói còn hiệu lực. Khi bạn mua trên iPhone hoặc iPad qua App Store, Apple xử lý thanh toán theo cách tương tự; chúng tôi lưu mã giao dịch gốc (original transaction ID), gói và các ngày, và kiểm tra lại với App Store. Ứng dụng gửi cho Google Play (hoặc App Store) một mã một chiều suy ra từ mã tài khoản Soi Nhà để gắn giao dịch với tài khoản của bạn.</li>
 </ul>
+
+<h2 id="mua-ma">2a. Khi bạn mua mã đồng bộ trên website</h2>
+<p>Trang soinha.com.vn bán mã đồng bộ, trả bằng chuyển khoản ngân hàng (VietQR). Khi bạn đặt mua, chúng tôi lưu <strong>email nhận mã</strong>, gói (30 hoặc 365 ngày), số tiền, mã đơn và thời điểm đặt, xác nhận. Chúng tôi chỉ xem giao dịch trong tài khoản ngân hàng của mình để đối chiếu mã đơn và số tiền; ngân hàng của bạn xử lý việc chuyển tiền và chúng tôi không nhận thông tin đăng nhập ngân hàng hay thẻ. Email được dùng để gửi mã và trả lời khi bạn cần hỗ trợ. Để chống lạm dụng, máy chủ đếm số đơn từ một địa chỉ mạng trong một giờ dưới dạng mã băm, không lưu địa chỉ.</p>
+<p>Mã đồng bộ không gắn với email: ai nhập mã trong ứng dụng thì tài khoản đó nhận thời gian đồng bộ. Website không dùng cookie, không có quảng cáo hay công cụ theo dõi.</p>
+
 <p>Dữ liệu này chỉ dùng để cung cấp các tính năng trên. Chúng tôi không bán dữ liệu, không dùng cho quảng cáo và không cho bên khác dùng vào mục đích riêng của họ.</p>
 
 <h2>3. Báo lỗi ứng dụng</h2>
@@ -43,10 +49,11 @@ li{margin:4px 0}
 <h2>4. Bên xử lý dữ liệu</h2>
 <p>Chúng tôi dùng các nhà cung cấp sau để vận hành dịch vụ, chỉ theo chỉ dẫn của chúng tôi:</p>
 <ul>
-<li>Google (Firebase Authentication, Firebase Crashlytics) – đăng nhập và báo lỗi.</li>
+<li>Google (Firebase Authentication, Firebase Crashlytics) – đăng nhập và báo lỗi; Google Play – bán gói đồng bộ; Apple (App Store) – bán gói đồng bộ trên iPhone và iPad.</li>
 <li>Fly.io – máy chủ ứng dụng (khu vực Singapore).</li>
 <li>Supabase – cơ sở dữ liệu và lưu trữ ảnh.</li>
-<li>Resend – gửi email mời.</li>
+<li>Resend – gửi email mời và email chứa mã đồng bộ.</li>
+<li>Cloudflare – lưu trữ và phân phối trang web.</li>
 </ul>
 <p>Dữ liệu được truyền qua kết nối mã hoá (HTTPS). Người bạn mời vào công trình sẽ xem và sửa được dữ liệu của công trình đó cho tới khi bạn gỡ họ ra.</p>
 
@@ -57,11 +64,14 @@ li{margin:4px 0}
 <li><strong>Internet, chạy nền khi khởi động lại máy:</strong> đồng bộ dữ liệu và giữ lịch nhắc.</li>
 </ul>
 
-<h2>6. Lưu giữ và xoá dữ liệu</h2>
+<h2 id="xoa-tai-khoan">6. Lưu giữ và xoá dữ liệu, xoá tài khoản Soi Nhà</h2>
 <ul>
 <li>Dữ liệu trên máy: xoá khi bạn gỡ ứng dụng, xoá dữ liệu ứng dụng, hoặc chọn xoá dữ liệu trên máy khi đăng xuất.</li>
 <li>Dữ liệu trên máy chủ: được giữ khi tài khoản còn hoạt động. Bạn có thể xoá tài khoản ngay trong ứng dụng (Tài khoản → <em>Xoá tài khoản</em>); tài khoản ngừng hoạt động ngay và toàn bộ dữ liệu, ảnh của tài khoản trên máy chủ bị xoá vĩnh viễn sau đó.</li>
+<li>Ảnh trên máy chủ khi gói đồng bộ hết hạn: được giữ 12 tháng kể từ ngày gói hết hạn, sau đó bị xoá khỏi máy chủ. Chúng tôi gửi email báo trước 30 ngày và ghi ngày xoá trong ứng dụng; gia hạn trước ngày đó thì ảnh được giữ nguyên. Ảnh trên điện thoại của bạn và các dữ liệu kiểm tra khác trên máy chủ (công trình, kết quả, ghi chú) không bị xoá.</li>
+<li>Đơn mua mã trên website: đơn chưa thanh toán tự huỷ sau 48 giờ và email của đơn bị xoá 30 ngày sau đó. Đơn đã thanh toán được giữ để hỗ trợ, hoàn tiền và sổ sách kế toán; bạn có thể yêu cầu xoá email khỏi đơn đã thanh toán qua email bên dưới.</li>
 <li>Nếu không còn cài ứng dụng, bạn có thể gửi yêu cầu xoá tài khoản tới email bên dưới, từ địa chỉ email của tài khoản.</li>
+<li>Khi xoá tài khoản, mọi dữ liệu của tài khoản trên máy chủ (thông tin tài khoản, công trình, kết quả kiểm tra, ghi chú, ảnh, lời mời) đều bị xoá. Gói đồng bộ đang tự gia hạn bị huỷ trên Google Play để bạn không bị trừ tiền tiếp. Với tài khoản đăng nhập bằng Apple, quyền đăng nhập Apple của Soi Nhà cũng bị thu hồi. Chúng tôi không thể huỷ gói mua qua App Store: hãy tự huỷ trong Cài đặt của iPhone/iPad (Apple ID → Đăng ký) trước hoặc sau khi xoá tài khoản. Chỉ giữ lại bản ghi giao dịch gói đồng bộ (mã giao dịch, gói, các ngày; không có email hay nội dung công trình) để xử lý hoàn tiền, khiếu nại và sổ sách kế toán. Báo cáo lỗi Crashlytics không gắn với tài khoản và được Google tự xoá sau 90 ngày.</li>
 </ul>
 
 <h2>7. Trẻ em</h2>
@@ -75,8 +85,9 @@ li{margin:4px 0}
 
 <hr>
 
+<section lang="en">
 <h1 id="en">Privacy Policy – Soi Nhà</h1>
-<div class="meta">Last updated: November 6, 2026</div>
+<div class="meta">Last updated: November 13, 2026</div>
 
 <p>Soi Nhà (package <code>vn.soinha.app</code>) helps homeowners inspect their construction work floor by floor, take evidence photos and track defects. This policy explains what data the app collects, why, who receives it and how to delete it.</p>
 
@@ -84,13 +95,19 @@ li{margin:4px 0}
 <p>You can use Soi Nhà without signing in. Your projects, inspection results, notes and photos then stay on your phone only; we do not receive them.</p>
 
 <h2>2. When you sign in</h2>
-<p>Signing in with a Google account (through Google's Firebase Authentication) enables backup, sync across devices and project sharing. We then process:</p>
+<p>Signing in with a Google account, or with Apple on iPhone and iPad (through Google's Firebase Authentication), enables backup, sync across devices and project sharing. We then process:</p>
 <ul>
-<li><strong>Account information:</strong> your email address and Google account identifier, to recognise your account.</li>
+<li><strong>Account information:</strong> your email address and Google or Apple account identifier, to recognise your account. With Sign in with Apple you can hide your email: we then receive only a relay address created by Apple. The same email used with Google and Apple is one account.</li>
 <li><strong>Project data:</strong> project names, floors, stages, planned milestones, inspection results, defect descriptions and notes you enter.</li>
 <li><strong>Evidence photos:</strong> photos you take or pick for checklist items. They are resized and stripped of metadata (such as GPS location) before upload.</li>
 <li><strong>Invitations:</strong> when you invite someone to a project, we store their email address and send them an invitation email.</li>
+<li><strong>Sync plan:</strong> when you buy the sync plan through Google Play, Google processes the payment; we never receive card or bank details. We receive and store the purchase token, the plan, its start and expiry dates, and check them with Google Play to know whether the plan is active. When you buy on an iPhone or iPad through the App Store, Apple processes the payment the same way; we store the original transaction ID, the plan and its dates, and check them with the App Store. The app gives Google Play (or the App Store) a one-way value derived from your Soi Nhà account identifier to link the purchase to your account.</li>
 </ul>
+
+<h2 id="buy-code">2a. When you buy a sync code on the website</h2>
+<p>The soinha.com.vn website sells sync codes paid by bank transfer (VietQR). When you order, we store <strong>the email the code is sent to</strong>, the plan (30 or 365 days), the amount, the order reference and when it was placed and confirmed. We only look at transactions in our own bank account to match the order reference and amount; your bank handles the transfer and we never receive bank login or card details. The email is used to send the code and to answer support requests. Against abuse, the server counts orders per network address per hour as a hash, without storing the address.</p>
+<p>A sync code is not tied to the email: whichever account enters it in the app gets the sync time. The website sets no cookies and has no ads or trackers.</p>
+
 <p>This data is used only to provide these features. We do not sell it, use it for advertising, or let others use it for their own purposes.</p>
 
 <h2>3. Crash reports</h2>
@@ -99,10 +116,11 @@ li{margin:4px 0}
 <h2>4. Service providers</h2>
 <p>We use these providers to run the service, acting only on our instructions:</p>
 <ul>
-<li>Google (Firebase Authentication, Firebase Crashlytics) – sign-in and crash reports.</li>
+<li>Google (Firebase Authentication, Firebase Crashlytics) – sign-in and crash reports; Google Play – selling the sync plan; Apple (App Store) – selling the sync plan on iPhone and iPad.</li>
 <li>Fly.io – application servers (Singapore region).</li>
 <li>Supabase – database and photo storage.</li>
-<li>Resend – invitation emails.</li>
+<li>Resend – invitation emails and emails with sync codes.</li>
+<li>Cloudflare – website hosting and delivery.</li>
 </ul>
 <p>Data is sent over encrypted connections (HTTPS). People you invite to a project can view and edit that project's data until you remove them.</p>
 
@@ -113,11 +131,14 @@ li{margin:4px 0}
 <li><strong>Internet, run after reboot:</strong> syncing data and keeping reminders scheduled.</li>
 </ul>
 
-<h2>6. Retention and deletion</h2>
+<h2 id="delete-account">6. Retention, deletion and deleting your Soi Nhà account</h2>
 <ul>
 <li>On your device: deleted when you uninstall the app, clear its data, or choose to delete local data when signing out.</li>
 <li>On our servers: kept while your account is active. You can delete your account in the app (Account → <em>Xoá tài khoản</em> / Delete account); the account stops working immediately and all of its server data and photos are then permanently deleted.</li>
+<li>Server photos after a sync plan ends: kept for 12 months after the plan ended, then deleted from our servers. We email you 30 days before and show the date in the app; renewing before then keeps them. The photos on your phone and your other server data (projects, results, notes) are not deleted.</li>
+<li>Website orders: unpaid orders are cancelled after 48 hours and their email is deleted 30 days later. Paid orders are kept for support, refunds and accounting; you can ask us by email to remove your email from a paid order.</li>
 <li>If the app is no longer installed, email a deletion request to the address below from your account's email address.</li>
+<li>Deleting an account removes all of its server data (account details, projects, inspection results, notes, photos, invitations). A renewing sync plan is cancelled on Google Play so you are not charged again. For an account signed in with Apple, Soi Nhà's Sign in with Apple access is revoked too. We cannot cancel a plan bought through the App Store: cancel it yourself in your iPhone/iPad Settings (Apple ID → Subscriptions), before or after deleting the account. Only the sync plan purchase record (purchase token, plan, dates; no email or project content) is kept, for refunds, disputes and accounting. Crashlytics crash reports are not linked to accounts and are deleted by Google after 90 days.</li>
 </ul>
 
 <h2>7. Children</h2>
@@ -128,6 +149,7 @@ li{margin:4px 0}
 
 <h2>9. Contact</h2>
 <p>Email: <a href="mailto:hai.ithust@gmail.com">hai.ithust@gmail.com</a></p>
+</section>
 </main>
 </body>
 </html>
